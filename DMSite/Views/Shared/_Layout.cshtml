@@ -1,15 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title><center>@ViewBag.Title - DEAD METAL </center></title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
+  
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+<body style=" background-color: #181818; background-image: url('../../Images/darkback.png'); width:100%;">
+   
+    <div style="background-color:black;color:lawngreen; height:25%; position:static"><center>  <img src="~/Images/deadmetal.png" class="HeaderBorder" /></center></div>
+    <div class="navbar navbar-inverse" style="background-color:black; color:lawngreen">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,28 +23,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="color:lawngreen">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { Style = "color:Green" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { Style = "color:Green" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { Style = "color:Green" })</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial", new { Style = "color:Green" })
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div style="background-color:transparent;">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
+       
     </div>
+
+    <div class="footer">
+
+        <footer>
+            &copy; @DateTime.Now.Year - MonotoneGamedev
+        </footer>
+
+    </div>
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+   
 </body>
 </html>
