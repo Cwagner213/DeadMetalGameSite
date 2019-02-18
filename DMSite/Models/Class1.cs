@@ -9,6 +9,7 @@ namespace DMSite.Models
     {
 
         public string Email { get; set; }
+
      
     }
 }
