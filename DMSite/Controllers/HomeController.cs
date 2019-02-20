@@ -27,7 +27,16 @@ namespace DMSite.Controllers
         {
             ViewBag.Message = "What do you think";
 
-            return View();
+            UsersEntities1 db = new UsersEntities1();
+
+            UserTable person = db.UserTables.SingleOrDefault(x => x.ID == 1);
+
+            EmailMember MemberToView = new EmailMember();
+
+            MemberToView.ID = person.ID;
+            MemberToView.Email = person.Email;
+
+            return View(MemberToView);
         }
 
         [HttpPost]

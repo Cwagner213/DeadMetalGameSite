@@ -1,11 +1,17 @@
-﻿@model IEnumerable<DMSite.Models.EmailMember>
+﻿@model DMSite.Models.EmailMember
 
 @{
     ViewBag.Title = "Contact";
 }
 
 
-asdsafasfasf
+@if(Model != null)
+{
+    @Model.ID
+    @Model.Email
+
+}
+
 <h2>@ViewBag.Title.</h2>
 <div>@ViewBag.Message</div>
 

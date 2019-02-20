@@ -7,6 +7,7 @@ namespace DMSite.Models
 {
     public class EmailMember
     {
+        public int ID { get; set; }
         public string Email { get; set; }
     }
 }
