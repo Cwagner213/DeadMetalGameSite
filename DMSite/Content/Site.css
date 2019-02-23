@@ -69,19 +69,25 @@
     .ImageBorder {
         max-width: 90%;
         min-width:90%;
-        border-color: red;
     }
     .TextBorder
     {
-        margin:auto !important;
+        margin:10px !important;
+    }
+   
+}
+@media (max-width:500px)
+{
+    .divBorder {
+        width: 95% !important;
     }
 }
 
 .TextBorder {
 
     height: auto;
-    width: 70%;
-    max-width:100px;
+   
+  
     font-size: 16px;
 
     min-width: 100px;
