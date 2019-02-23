@@ -5,14 +5,23 @@
 }
 
 
-@if(Model != null)
-{
-    @Model.ID
-    @Model.Email
+<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
+ <center>
+<div class="TextBorderContact" style="margin-top:2%; color:lawngreen">
+    <center>
+        <br />    <br />   <br />   <br />
+        <img src="~/Images/testsignuppage.png" class="ImageBorder" style="transform:scale(2,2)" />
+        <br />    <br />    <br />
+        <h1>Sign up for the beta now</h1>
+        <p class="TextBorderContact">All information collected will be kept only for the purpose of emailing for beta access and other events. <br />  Beta is currently expected to come at a later point in 2019</p>
+        <br />    <br />
+        Email:   @Html.TextBox("Name")
+        <br />    <br />    <br />
+        <input type="submit" value="Sign Up" class="btn btn-block btn-success" />
+    </center>
+</div>
+</center>
 
-}
 
-<h2>@ViewBag.Title.</h2>
-<div>@ViewBag.Message</div>
 
 
