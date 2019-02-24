@@ -5,21 +5,22 @@
 }
 
 
-<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
- <center>
-<div class="TextBorderContact" style="margin-top:2%; color:lawngreen">
-    <center>
-        <br />    <br />   <br />   <br />
-        <img src="~/Images/testsignuppage.png" class="ImageBorder" style="transform:scale(2,2)" />
-        <br />    <br />    <br />
-        <h1>Sign up for the beta now</h1>
-        <p class="TextBorderContact">All information collected will be kept only for the purpose of emailing for beta access and other events. <br />  Beta is currently expected to come at a later point in 2019</p>
-        
-        Email:   @Html.TextBox("Name")
-        <br />    <br />    <br />
-        <input type="submit" value="Sign Up" class="btn btn-block btn-success" />
-    </center>
-</div>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<center>
+    <div class="TextBorderContact" style="margin-top:2%; color:lawngreen">
+        <center>
+            <br />    <br />   <br />   <br />
+            <img src="~/Images/testsignuppage.png" class="ImageBorder" style="transform:scale(2,2)" />
+            <br />    <br />    <br />
+            <h1 style="font-family:Orbitron">Sign up for the beta now</h1>
+            <p class="TextBorderContact" style="font-family:Orbitron">All information collected will be kept only for the purpose of emailing for beta access and other events. <br />  Beta is currently expected to come at a later point in 2019</p>
+
+            <p style="font-family:Orbitron">Email:</p>   @Html.TextBox("Name")
+            <br />    <br />    <br />
+            <input type="submit" value="Sign Up" class="btn btn-dark" />
+        </center>
+    </div>
 </center>
 
 

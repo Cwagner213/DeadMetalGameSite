@@ -1,29 +1,18 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<div style ="color:Blue">@ViewBag.Message</div>
+﻿
 
-Youre using @Request.Browser.Browser and thats okay
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<center>
+    <div class="divBorder">
+        <h1 style="font-family:Orbitron; color:lawngreen; margin-top:8px">Explore</h1>
+        <p style="margin-top:1%;margin-bottom:10px; float:none!important; font-family:Orbitron" class="TextBorder">Explore the universe using the ships navigation map</p>
+        <img style="font-family:Orbitron" class="ImageBorder" src="~/Images/websitemenupic.jpg" />
 
-<p>Use this area to provide additional information.</p>
 
+        <img class="ImageBorder" src="~/Images/Exploring.jpg" />
+        <h1 style="font-family:Orbitron; color:lawngreen; margin-top:8px">Create</h1>
+        <p style="margin-top:1%;margin-bottom:10px; float:none!important; font-family:Orbitron" class="TextBorder">Create new robot explorers to take on the universe</p>
+        <img class="ImageBorder" src="~/Images/CharacterCreation.jpg" /><br />
 
-@{ var amounts = new List<decimal> { 100, 25.2m, -30, 1, -99 }; }
-
-<ul>
-    @foreach(var a in amounts)
-    {
-        <li>@formatAmount(a)</li>
-    }
-</ul>
-
-    @helper formatAmount(decimal amount)
-    {
-        var color = "green";
-        if(amount > 0)
-        {
-            color = "red";
-    }
-<span style="color:@color">@String.Format("{0:c}",amount)</span>
-}
+        <img class="embed-responsive-item" src="~/Images/Space Pirate Shotgun shoot Left  .gif" />
+    </div>
+</center>
