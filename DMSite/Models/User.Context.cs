@@ -13,10 +13,10 @@ namespace DMSite.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersEntities : DbContext
+    public partial class UsersEntities3 : DbContext
     {
-        public UsersEntities()
-            : base("name=UsersEntities")
+        public UsersEntities3()
+            : base("name=UsersEntities3")
         {
         }
     

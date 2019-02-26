@@ -26,8 +26,8 @@ namespace DMSite.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "What do you think";
-
-            UsersEntities1 db = new UsersEntities1();
+          
+            UsersEntities3 db = new UsersEntities3();
 
             UserTable person = db.UserTables.SingleOrDefault(x => x.ID == 1);
 
@@ -39,17 +39,31 @@ namespace DMSite.Controllers
             return View(MemberToView);
         }
 
-        [HttpPost]
-        public ActionResult Contact(string message)
+ 
+        public ActionResult ContactSubmit(EmailMember member)
         {
-            ViewBag.Message = "Thanks for the feedback";
-            List<EmailMember> EmailList = new List<EmailMember>();
-            EmailMember member = new EmailMember();
-            EmailList.Add(new EmailMember { Email = "cjwagner221@gmail.com" });
-            EmailList.Add(new EmailMember { Email = "cjwagner223@gmail.com" });
-            EmailList.Add(new EmailMember { Email = "cjwagner224@gmail.com" });
-            EmailList.Add(new EmailMember { Email = "cjwagner225@gmail.com" });
-            return View(EmailList);
+
+            try
+            {
+
+                UsersEntities3 db = new UsersEntities3();
+
+                UserTable newMember = new UserTable();
+                newMember.Email = member.Email;
+
+                db.UserTables.Add(newMember);
+                db.SaveChanges();
+
+                int latestID = newMember.ID;
+
+               
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            return RedirectToAction("Contact");
         }
 
 
