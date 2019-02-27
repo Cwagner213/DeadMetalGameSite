@@ -66,6 +66,24 @@
     border-radius: 25px;
 }
 
+.ImageBorderLong {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+    height: auto;
+    border-width: 3px;
+    border-style: ridge;
+    border-color: lawngreen;
+    height: auto !important;
+    background-color: black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: 4;
+    border-radius: 25px;
+}
+
+
 li {
     margin-left: 40px !important;
 }
@@ -81,7 +99,10 @@ li {
     {
         margin:10px !important;
     }
-   
+   .ImageBorderLong{
+       min-height:100px;
+       margin-top:40px !important;
+   }
 }
 @media (max-width:500px)
 {
