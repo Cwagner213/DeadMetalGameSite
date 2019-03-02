@@ -34,7 +34,7 @@ namespace DMSite.Controllers
             EmailMember MemberToView = new EmailMember();
 
             MemberToView.ID = person.ID;
-            MemberToView.Email = person.Email;
+            MemberToView.Email = "";
 
             return View(MemberToView);
         }
@@ -67,27 +67,6 @@ namespace DMSite.Controllers
         }
 
 
-        public ActionResult Backstage(string secret, string format)
-        {
-            ViewBag.Message = "Backstage";
-            if(secret != "special")
-            {
-                return new HttpStatusCodeResult(403);
-            }
-
-            if(format == "text")
-            {
-                return Content("You Rock");
-            }
-            else if (format == "json")
-            {
-                return Json(new { password = "You Rock!", expires = DateTime.UtcNow.ToShortDateString() }, JsonRequestBehavior.AllowGet);
-            }
-            else if (format == "clean")
-            {
-                return PartialView();
-            }
-            return View();
-        }
+     
     }
 }

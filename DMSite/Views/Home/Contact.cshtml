@@ -13,6 +13,7 @@
 
             @using (Html.BeginForm("ContactSubmit", "Home", FormMethod.Post))
             {
+                
                 <br />   
                 <img src="~/Images/testsignuppage.png" class="ImageBorderLong" style="transform:scale(2,2); margin-bottom:170px; margin-top:170px; width:50%!important" />
                 <br />   
@@ -20,7 +21,7 @@
                 <p class="TextBorderContact" style="font-family:Orbitron">All information collected will be kept only for the purpose of emailing for beta access and other events. <br />  Beta is currently expected to come at a later point in 2019</p>
 
 
-                <p style="font-family:Orbitron">Email:</p>   @Html.TextBoxFor(EmailMember => EmailMember.Email, new { @class = "form-control", @placeholder = "Name" })
+                <p style="font-family:Orbitron">Email:</p>   @Html.TextBoxFor(EmailMember => EmailMember.Email, new { @class = "form-control", @placeholder = "Email" })
                 <br />  
                 <input type="submit" value="Sign Up" class="btn btn-dark" />
             }
