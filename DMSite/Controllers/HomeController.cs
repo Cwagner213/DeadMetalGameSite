@@ -12,12 +12,37 @@ namespace DMSite.Controllers
     {
         public ActionResult Index()
         {
+            UsersEntities3 db = new UsersEntities3();
+            List<UserTable> EmailList = db.UserTables.ToList();
+           
+
+
+            return View();
+        }
+
+        public ActionResult DevBlog()
+        {
+            UsersEntities3 db = new UsersEntities3();
+
+
+
+            return View();
+        }
+
+        public ActionResult DevBlogPageFlip()
+        {
+            return View();
+        }
+
+
+        public ActionResult DevBlogPost()
+        {
+
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }

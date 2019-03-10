@@ -1,0 +1,26 @@
+﻿@model DMSite.Models.EmailMember
+@{
+    ViewBag.Title = "DevBlogPost";
+}
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<center>
+    <div class="divBorder" style="margin-top:2%; color:lawngreen">
+        <center>
+
+            @using (Html.BeginForm("ContactSubmit", "Home", FormMethod.Post))
+            {
+
+                <p style="font-family:Orbitron">Email:</p> @Html.TextAreaFor(EmailMember => EmailMember.Email, new { style = "width: 1000px; height: 500px" });
+                <br />
+                <input type="submit" value="Sign Up" class="btn btn-dark" />
+            }
+        </center>
+    </div>
+</center>
+
+
+
+
