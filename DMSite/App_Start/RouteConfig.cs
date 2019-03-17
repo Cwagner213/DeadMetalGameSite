@@ -14,9 +14,9 @@ namespace DMSite
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-              name: "Backstage Pass",
-              url: "Home/backstage/{secret}/{format}",
-              defaults: new { controller = "Home", action = "Backstage", format = UrlParameter.Optional }
+              name: "PostPage",
+              url: "Home/PostPage/{secret}/{format}",
+              defaults: new { controller = "Home", action = "DevBlogPost", format = UrlParameter.Optional }
           );
 
             routes.MapRoute(

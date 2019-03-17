@@ -27,5 +27,6 @@ namespace DMSite.Models
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserTable> UserTables { get; set; }
+        public virtual DbSet<Table> Tables { get; set; }
     }
 }

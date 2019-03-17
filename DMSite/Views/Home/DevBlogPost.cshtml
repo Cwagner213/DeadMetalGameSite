@@ -10,7 +10,7 @@
     <div class="divBorder" style="margin-top:2%; color:lawngreen">
         <center>
 
-            @using (Html.BeginForm("ContactSubmit", "Home", FormMethod.Post))
+            @using (Html.BeginForm("", "Home", FormMethod.Post))
             {
 
                 <p style="font-family:Orbitron">Email:</p> @Html.TextAreaFor(EmailMember => EmailMember.Email, new { style = "width: 1000px; height: 500px" });

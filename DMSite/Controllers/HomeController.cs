@@ -13,18 +13,27 @@ namespace DMSite.Controllers
         public ActionResult Index()
         {
             UsersEntities3 db = new UsersEntities3();
-            List<UserTable> EmailList = db.UserTables.ToList();
+        
            
 
 
             return View();
         }
 
-        public ActionResult DevBlog()
+        public ActionResult DevBlog(int pageNum)
         {
             UsersEntities3 db = new UsersEntities3();
+            List<UserTable> EmailList = db.UserTables.ToList();
+            List<EmailMember> EmailMemberPass = new List<EmailMember>();
 
+            if(EmailList[pageNum] != null)
+            {
 
+            }
+            else
+            {
+
+            }
 
             return View();
         }
@@ -35,10 +44,20 @@ namespace DMSite.Controllers
         }
 
 
-        public ActionResult DevBlogPost()
+        public ActionResult DevBlogPost(string secret, string format)
+        {
+            if(secret != "CatsCats213")
+            {
+                return new HttpStatusCodeResult(403);
+            }
+            return View();
+        }
+
+        public ActionResult DevBlogSave()
         {
 
-            return View();
+            
+            return RedirectToAction("DevBlog");
         }
 
         public ActionResult About()

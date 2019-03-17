@@ -1,6 +1,11 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <p>some stuff</p>
+}
+
 @{
     ViewBag.Title = "DevBlog";
 }
 
-    
+
