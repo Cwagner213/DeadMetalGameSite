@@ -1,8 +1,13 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
-{
-    <p>some stuff</p>
-}
+@model List<DMSite.Models.PostModel>
+
+
+   @foreach (var item in Model)
+    {
+        <p>@item.Post1</p>
+        <br/>
+    }
+
 
 @{
     ViewBag.Title = "DevBlog";

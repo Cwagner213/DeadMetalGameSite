@@ -1,4 +1,4 @@
-﻿@model DMSite.Models.EmailMember
+﻿@model DMSite.Models.PostModel
 @{
     ViewBag.Title = "DevBlogPost";
 }
@@ -10,10 +10,10 @@
     <div class="divBorder" style="margin-top:2%; color:lawngreen">
         <center>
 
-            @using (Html.BeginForm("", "Home", FormMethod.Post))
+            @using (Html.BeginForm("DevBlogSave", "Home", FormMethod.Post))
             {
 
-                <p style="font-family:Orbitron">Email:</p> @Html.TextAreaFor(EmailMember => EmailMember.Email, new { style = "width: 1000px; height: 500px" });
+                <p style="font-family:Orbitron">Email:</p> @Html.TextAreaFor( PostModel => PostModel.Post1 , new { style = "width: 1000px; height: 500px" });
                 <br />
                 <input type="submit" value="Sign Up" class="btn btn-dark" />
             }

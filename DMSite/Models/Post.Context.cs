@@ -13,10 +13,10 @@ namespace DMSite.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersEntities3 : DbContext
+    public partial class UsersEntities : DbContext
     {
-        public UsersEntities3()
-            : base("name=UsersEntities3")
+        public UsersEntities()
+            : base("name=UsersEntities")
         {
         }
     
@@ -25,8 +25,7 @@ namespace DMSite.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<UserTable> UserTables { get; set; }
-        public virtual DbSet<Table> Tables { get; set; }
     }
 }

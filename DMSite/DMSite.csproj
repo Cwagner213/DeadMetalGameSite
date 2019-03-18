@@ -209,26 +209,27 @@
     <Compile Include="Models\EmailMember.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>User.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.Context.cs">
+    <Compile Include="Models\Post.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User.Context.tt</DependentUpon>
+      <DependentUpon>Post.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs">
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>Post.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User.tt</DependentUpon>
+      <DependentUpon>Post.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.Designer.cs">
+    <Compile Include="Models\Post1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User.edmx</DependentUpon>
+      <DependentUpon>Post.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\UserTable.cs">
-      <DependentUpon>User.tt</DependentUpon>
+      <DependentUpon>Post.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -263,24 +264,24 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\User.edmx">
+    <EntityDeploy Include="Models\Post.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>User.Designer.cs</LastGenOutput>
+      <LastGenOutput>Post.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\User.edmx.diagram">
-      <DependentUpon>User.edmx</DependentUpon>
+    <Content Include="Models\Post.edmx.diagram">
+      <DependentUpon>Post.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\DeadMetalSite - Web Deploy.pubxml" />
-    <Content Include="Models\User.Context.tt">
+    <Content Include="Models\Post.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>User.edmx</DependentUpon>
-      <LastGenOutput>User.Context.cs</LastGenOutput>
+      <DependentUpon>Post.edmx</DependentUpon>
+      <LastGenOutput>Post.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\User.tt">
+    <Content Include="Models\Post.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>User.edmx</DependentUpon>
-      <LastGenOutput>User.cs</LastGenOutput>
+      <DependentUpon>Post.edmx</DependentUpon>
+      <LastGenOutput>Post1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

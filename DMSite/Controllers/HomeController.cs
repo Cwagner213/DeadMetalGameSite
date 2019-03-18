@@ -12,37 +12,78 @@ namespace DMSite.Controllers
     {
         public ActionResult Index()
         {
-            UsersEntities3 db = new UsersEntities3();
-        
-           
+            
+
+
 
 
             return View();
         }
 
-        public ActionResult DevBlog(int pageNum)
+        public ActionResult DevBlog()
         {
-            UsersEntities3 db = new UsersEntities3();
+            UsersEntities db = new UsersEntities();
+            List<Post> EmailList = db.Posts.ToList();
+            List<PostModel> EmailPostPass = new List<PostModel>();
+            if (EmailList.Count > 0)
+            {
+                if (EmailList[0] != null)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (EmailList[i] != null)
+                        {
+                            PostModel temp = new PostModel();
+                            temp.Post1 = EmailList[i].Post1;
+                            temp.Id = EmailList[i].Id;
+
+                            EmailPostPass.Add(temp);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            return View(EmailPostPass);
+        }
+
+        public ActionResult DevBlogPageFlip(int pageNum)
+        {
+            UsersEntities db = new UsersEntities();
             List<UserTable> EmailList = db.UserTables.ToList();
             List<EmailMember> EmailMemberPass = new List<EmailMember>();
 
-            if(EmailList[pageNum] != null)
+            if (EmailList[pageNum] != null)
             {
+                for (int i = 0; i < 3; i++)
+                {
+                    if (EmailList[pageNum + i] != null)
+                    {
+                        EmailMember temp = new EmailMember();
+                        temp.Email = EmailList[pageNum + i].Email;
+                        temp.ID = EmailList[pageNum + i].ID;
 
+                        EmailMemberPass.Add(temp);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
             }
             else
             {
 
             }
-
-            return View();
+            ViewBag.page = pageNum;
+            return View(EmailMemberPass);
         }
-
-        public ActionResult DevBlogPageFlip()
-        {
-            return View();
-        }
-
 
         public ActionResult DevBlogPost(string secret, string format)
         {
@@ -50,13 +91,32 @@ namespace DMSite.Controllers
             {
                 return new HttpStatusCodeResult(403);
             }
+
             return View();
         }
 
-        public ActionResult DevBlogSave()
+        public ActionResult DevBlogSave(PostModel postToAdd)
         {
 
-            
+
+            try
+            {
+
+                UsersEntities db = new UsersEntities();
+                Post tempPost = new Post();
+
+                tempPost.Post1 = postToAdd.Post1;
+     
+                db.Posts.Add(tempPost);
+                db.SaveChanges();
+           
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+          
             return RedirectToAction("DevBlog");
         }
 
@@ -70,8 +130,8 @@ namespace DMSite.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "What do you think";
-          
-            UsersEntities3 db = new UsersEntities3();
+
+            UsersEntities db = new UsersEntities();
 
             UserTable person = db.UserTables.SingleOrDefault(x => x.ID == 1);
 
@@ -90,8 +150,7 @@ namespace DMSite.Controllers
             try
             {
 
-                UsersEntities3 db = new UsersEntities3();
-
+                UsersEntities db = new UsersEntities();
                 UserTable newMember = new UserTable();
                 newMember.Email = member.Email;
 
